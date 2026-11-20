@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhanshree ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    color: white;
+    background: linear-gradient(135deg,
+        #160b2b, #482052, #a33b78);
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 15px;
+    position: relative;
+}
+
+h1 {
+    font-size: clamp(38px, 8vw, 75px);
+    background: linear-gradient(
+        90deg, #ff75bd, #fff1a8, #8df5ff, #d6a3ff
+    );
+    background-size: 300%;
+    color: transparent;
+    background-clip: text;
+    animation: rainbow 5s linear infinite;
+}
+
+@keyframes rainbow {
+    to { background-position: 300%; }
+}
+
+#typing {
+    font-size: clamp(20px, 5vw, 30px);
+    margin-top: 25px;
+    min-height: 80px;
+}
+
+button {
+    background: #ff75bd;
+    color: white;
+    border: none;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 0 20px #ff75bd;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+.section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 34px;
+    color: #ffb7df;
+    margin-bottom: 15px;
+}
+
+.section p {
+    margin-bottom: 30px;
+    color: #fbd9ee;
+}
+
+.gallery {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.photo-card {
+    background: rgba(255,255,255,0.12);
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.4s;
+}
+
+.photo-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 0 25px #ff75bd;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.photo-card h3 {
+    margin-top: 12px;
+    color: #ffd0ec;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    z-index: 20;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 15px;
+}
+
+#lightbox span {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 1;
+    pointer-events: none;
+    animation: float 8s linear forwards;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+.butterfly {
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    font-size: 30px;
+    animation: fly 12s linear infinite;
+}
+
+@keyframes fly {
+    0% { left: -10%; top: 70%; transform: rotate(0deg); }
+    30% { top: 20%; }
+    60% { top: 50%; }
+    100% { left: 110%; top: 15%; transform: rotate(360deg); }
+}
+
+footer {
+    text-align: center;
+    padding: 40px 15px;
+    color: #ffd0ec;
+    font-size: 22px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+    <h1>Dhanshree ❤️🥹</h1>
+
+    <div id="typing">
+        A little world made for you 💗
+    </div>
+
+    <button onclick="startSurprise()">
+        Open Your Surprise 💖
+    </button>
+</div>
+
+<div class="section">
+    <h2>🦋 Beautiful Memories 🦋</h2>
+    <p>Every picture holds a special memory ❤️</p>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+            <img src="photos/photo1.jpg" alt="Memory 1"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Beautiful Memory 💗</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo2.jpg" alt="Memory 2"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Sweet Moments 🌸</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo3.jpg" alt="Memory 3"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Forever Special 🥹</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo4.jpg" alt="Memory 4"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Happy Times 🦋</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo5.jpg" alt="Memory 5"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Little Happiness ✨</h3>
+        </div>
+
+        <div class="photo-card">
+            <img src="photos/photo6.jpg" alt="Memory 6"
+            onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
+            <h3>Special Moments ❤️</h3>
+        </div>
+
+    </div>
+</div>
+
+<div id="lightbox" onclick="closePhoto()">
+    <span>×</span>
+    <img id="largePhoto" src="" alt="Memory">
+</div>
+
+<footer>
+    Stay blessed and keep smiling! 🌸✨
+    <br><br>
+    Forever special! 💖
+</footer>
+
+<script>
+
+const messages = [
+    "Hello Dhanshree 🥰",
+    "I LOVE YOU DHANSHREE! 💖",
+    "You are the best sister! 🫂",
+    "Stay blessed and keep smiling! 🌸✨"
+];
+
+async function startSurprise() {
+    const box = document.getElementById("typing");
+    document.querySelector("button").style.display = "none";
+
+    for (const message of messages) {
+        box.innerHTML = "";
+
+        for (let i = 0; i < message.length; i++) {
+            const span = document.createElement("span");
+            span.textContent = message[i];
+            span.style.color = [
+                "#ff75bd", "#ffe58f", "#8df5ff",
+                "#c7a3ff", "#a8ffbd"
+            ][i % 5];
+
+            box.appendChild(span);
+            await new Promise(resolve => setTimeout(resolve, 130));
+        }
+
+        await new Promise(resolve => setTimeout(resolve, 1500));
+    }
+
+    box.innerHTML = "Forever special! 💗🦋✨";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+
+    heart.textContent = ["💗", "💕", "❤️", "✨", "🌸"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (5 + Math.random() * 5) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 10000);
+}
+
+function createButterfly() {
+    const butterfly = document.createElement("div");
+    butterfly.className = "butterfly";
+    butterfly.textContent = "🦋";
+
+    butterfly.style.animationDelay = Math.random() * 5 + "s";
+    butterfly.style.top = Math.random() * 70 + "%";
+
+    document.body.appendChild(butterfly);
+    setTimeout(() => butterfly.remove(), 15000);
+}
+
+function openPhoto(photo) {
+    document.getElementById("largePhoto").src = photo.src;
+    document.getElementById("lightbox").style.display = "flex";
+}
+
+function closePhoto() {
+    document.getElementById("lightbox").style.display = "none";
+}
+
+setInterval(createHeart, 500);
+setInterval(createButterfly, 4000);
+
+</script>
+
+</body>
+</html>
