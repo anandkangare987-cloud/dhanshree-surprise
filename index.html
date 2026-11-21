@@ -180,6 +180,21 @@ footer {
     color: #ffd0ec;
     font-size: 22px;
 }
+#musicBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #ff4da6, #9b59b6);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
 </style>
 </head>
 
@@ -204,25 +219,25 @@ footer {
     <div class="gallery">
 
         <div class="photo-card">
-            <img src="dhanshree-suprise/121123.jpeg" alt="Memory 1"
+            <img src="phto/121123.jpeg" alt="Memory 1"
             onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
             <h3>Beautiful Memory 💗</h3>
         </div>
 
         <div class="photo-card">
-            <img src="dhanshree-suprise/WhatsApp Image 2026-11-21 at 12.14.34 AM.jpeg" alt="Memory 2"
+            <img src="phto/WhatsApp Image 2026-11-21 at 12.14.34 AM.jpeg" alt="Memory 2"
             onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
             <h3>Sweet Moments 🌸</h3>
         </div>
 
         <div class="photo-card">
-            <img src="dhanshree-suprise/WhatsApp Image 2026-11-21 at 12.14.35 AM.jpeg" alt="Memory 3"
+            <img src="phto/WhatsApp Image 2026-11-21 at 12.14.35 AM.jpeg" alt="Memory 3"
             onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
             <h3>Forever Special 🥹</h3>
         </div>
 
         <div class="photo-card">
-            <img src="dhanshree-suprise/12233.jpeg" alt="Memory 4"
+            <img src="phto/12233.jpeg" alt="Memory 4"
             onclick="openPhoto(this)" onerror="this.style.opacity='0.2'">
             <h3>Happy Times 🦋</h3>
         </div>
@@ -328,6 +343,28 @@ setInterval(createHeart, 500);
 setInterval(createButterfly, 4000);
 
 </script>
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="dhanshree/song.mp3.mpeg" type="audio/mpeg">
+</audio>
 
+<button id="musicBtn" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    function toggleMusic() {
+        if (music.paused) {
+            music.play();
+            musicBtn.innerHTML = "⏸ Pause Music";
+        } else {
+            music.pause();
+            musicBtn.innerHTML = "🎵 Play Music";
+        }
+    }
+</script>
 </body>
 </html>
